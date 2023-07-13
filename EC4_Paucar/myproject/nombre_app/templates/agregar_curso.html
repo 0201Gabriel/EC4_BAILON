@@ -1,0 +1,20 @@
+{% if messages %}
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+{% endif %}
+
+<form action="{% url 'crear_curso' %}" method="POST">
+    {% csrf_token %}
+    <label for="code">Código:</label>
+    <input type="text" name="code"><br>
+    <label for="name">Nombre:</label>
+    <input type="text" name="name"><br>
+    <label for="hour">Horas:</label>
+    <input type="number" name="hour"><br>
+    <label for="credits">Créditos:</label>
+    <input type="number" name="credits"><br>
+    <label for="state">Estado:</label>
+    <input type="text" name="state"><br>
+    <button type="submit">Crear</button>
+</form>
